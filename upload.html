@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPLOAD REPORTS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div id="logo">
+            <img src="img/logo.png" alt="onco guide logo" id="A">
+        </div>
+        <div id="text">
+            <h1>OncoGuide AI</h1>
+            <h4>~Every Sunrise Brings Another Chance</h4>
+        </div>
+        <div id="nav">
+            <a href="home.html" class="B">Home</a>
+            <a href="home.html" class="B">About</a>
+            <a href="home.html" class="B">Features</a>
+            <a href="home.html" class="B">How It Works</a>
+            <a href="home.html" class="B">Contact</a>
+        </div>
+    </div>
+</header>
+<section class="op">
+    <div class="content">
+        <br><br>
+            <h4>SUPPORTING BETTER DECISIONS, TOGETHER. </h4> <br>
+            <h2>Upload Diagnostic Reports</h2><br>
+            <p>Upload the essential reports and our AI will analyze them to generate a personalized treatment pathway and explain each step in detail.</p><br><br>
+            <div class="P">
+                <img src="img/secure.png" alt="security" id="Q">
+                <p>Your data is secure, private and used only for analysis.</p>
+            </div>
+    </div>
+    <div id="img"></div>
+</section>
+<section class="W">
+    <h2>1. Upload Required Diagnostic Reports</h2><br>
+    <p>These reports help our AI understand the clinical
+     picture and suggest the most appropriate treatment
+     pathway</p><br>
+    <div class="upload-container"> 
+        <div class="report">
+            <div class="card">
+                <div class="card1"> 
+                    <img src="img/card1.jpeg" class="bi">
+                    <div class="lo">
+                        <p class="bit"> 1. Biopsy / Histopathology</p>
+                        <span class="badge">Required</span>
+                    </div>
+                </div>
+                <p>Confirms cancer type and provides grading information.</p><br>
+                <input type="file" id="biopsy-upload" multiple><br>
+                <label for="biopsy-upload" class="upload-btn">+ Add More Reports</label>
+            </div>
+            <div class="card">
+                <div class="card1"> 
+                    <img src="img/card2.jpeg" class="bi">
+                        <div class="lo">
+                            <p class="bit"> 2. IHC Report</p>
+                            <span class="badge">Recommended</span>
+                        </div>
+                </div>
+                <p>Includes biomarkers like ER, PR, HER2, Ki-67, PD-L1, MSI, etc.</p><br>
+                <input type="file" id="IHC-upload" multiple><br>
+                <label for="IHC-upload" class="upload-btn">+ Add More Reports</label>
+            </div>
+            <div class="card">
+            <div class="card1"> 
+                    <img src="img/card3.jpeg" class="bi">
+                    <div class="lo">
+                    <p class="bit"> 3.Imaging Reports</p>
+                   <span class="badge">Required</span></div></div>
+                   <p> ULTRASOUND • PET • CT • MRI</p>
+                   <p>Helps in accurate staging and assessing cancer spread.</p><br>
+                    <input type="file" id="Scan-upload" multiple><br>
+                    <label for="Scan-upload" class="upload-btn">+ Add More Reports</label>
+            </div>
+            <div class="card">
+            <div class="card1"> 
+                    <img src="img/card4.jpeg" class="bi">
+                    <div class="lo">
+                    <p class="bit"> 4.Blood Investigations </p>
+                   <span class="badge">Required</span></div></div>
+                   <p>CBC • LFT • RFT • Tumor Markers • Other relevant blood tests.</p><br>
+                    <input type="file" id="blood-upload" multiple><br>
+                    <label for="blood-upload" class="upload-btn">+ Add More Reports</label>
+            </div>
+             <div class="card">
+            <div class="card1"> 
+                    <img src="img/card5.jpeg" class="bi">
+                    <div class="lo">
+                    <p class="bit"> 5.ECHO / Cardiac Evaluation </p>
+                   <span class="badge">Recommended</span></div></div>
+                   <p>Evaluates heart function before cardiotoxic chemotherapy treatments.</p><br>
+                    <input type="file" id="heart-upload" multiple><br>
+                    <label for="heart-upload" class="upload-btn">+ Add More Reports</label>
+            </div></div>
+            <div class="upload-overview">
+                <h2>UPLOAD OVERVIEW</h2>
+                <div class="circle-container">
+                    <div class="tick"><i class="fa-solid fa-check"></i></div>
+                    <p id="vi">0/7</p>
+                    <p id="re">Reports Uploaded</p>
+                    <p id="up">Waiting for Uploads</p>
+                </div>
+                <p>Please upload the required reports to begin AI analysis.</p>
+                 <div class="al">
+                <div class="check">
+                    <div class="checkbox" id="biopsyCheck"></div>
+                   <h3>Biopsy / Histopathology</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="IHCcheck"></div>
+                   <h3>IHC Report</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="imagingCheck"></div>
+                   <h3>Imaging Reports</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="CBCcheck"></div>
+                   <h3>CBC</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="LFTcheck"></div>
+                   <h3>LFT</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="RFTcheck"></div>
+                   <h3>RFT</h3>
+                </div>
+                <div class="check">
+                    <div class="checkbox" id="echoCheck"></div>
+                   <h3>ECHO</h3>
+                </div></div>
+               </div>           
+     </div><br> 
+     
+    <div id="sum"><h2>2. Uploaded Reports Summary</h2>
+           <p id="cen">Review, preview, or manage your uploaded files.</p>
+           <div class="box">
+    
+     <div class="holder">
+        <div class="pi">Report Type</div>
+        <div class="pi">Status</div>
+        <div class="pi">Files Uploaded</div>
+        <div class="pi">Uploaded Files</div>
+        <div class="pi">Action</div>
+    </div>
+    <div class="holder">
+        <div class="pi">Biopsy / Histopathology</div>
+        <div class="pi" id="biopsyStatus">Pending</div>
+        <div class="pi" id="biopsyCount">0</div>
+        <div class="pi wr" id="biopsyFiles">No reports uploaded</div>
+        <div class="pi" ><button class="delete-btn" data-report="biopsy">Delete</button></div>
+    </div>
+    <div class="holder">
+        <div class="pi">IHC Report</div>
+        <div class="pi" id="IHCStatus">Pending</div>
+        <div class="pi" id="IHCCount">0</div>
+        <div class="pi wr" id="IHCFiles">No reports uploaded</div>
+        <div class="pi" ><button class="delete-btn" data-report="ihc">Delete</button></div>
+    </div>
+     <div class="holder">
+        <div class="pi">Imaging Report</div>
+        <div class="pi" id="ScanStatus">Pending</div>
+        <div class="pi" id="ScanCount">0</div>
+        <div class="pi wr" id="ScanFiles">No reports uploaded</div>
+        <div class="pi" ><button class="delete-btn" data-report="scan">Delete</button></div>
+    </div>
+     <div class="holder">
+        <div class="pi">Blood Investigations</div>
+        <div class="pi" id="bloodStatus">Pending</div>
+        <div class="pi" id="bloodCount">0</div>
+        <div class="pi wr" id="bloodFiles">No reports uploaded</div>
+        <div class="pi" ><button class="delete-btn" data-report="blood">Delete</button></div>
+    </div>
+     <div class="holder">
+        <div class="pi">ECHO</div>
+        <div class="pi" id="heartStatus">Pending</div>
+        <div class="pi" id="heartCount">0</div>
+        <div class="pi wr" id="heartFiles">No reports uploaded</div>
+        <div class="pi" ><button class="delete-btn" data-report="echo">Delete</button></div>
+    </div>
+</div></div></section>
+<section>
+<div class="analyze">
+    <h2>Analyze My Reports</h2>
+        <div class="mark"><i class="fa-solid fa-check"></i></div>
+         <h3>All reports uploaded!</h3>
+    <p>Your reports are ready for AI analysis.</p>
+       <p> Click the button below to generate an
+        organized summary with treatment guidance
+        and clinical insights.</p>
+    <button id="but" disabled>
+        Analyze My Reports →
+    </button>
+    <div id="icon">
+        <div class="feature"><i class="fa-solid fa-shield-halved"></i>
+        <span class="bit">Secure</span></div>
+        <div class="feature"><i class="fa-solid fa-lock"></i>
+        <span class="bit">Private</span></div>
+         <div class="feature"><i class="fa-solid fa-brain"></i>
+        <span class="bit">AI-Powered</span></div>
+    </div>
+</div></section>
+<footer>
+    <div id="we">
+        <div class="X" id="left">
+             <div id="ge">
+                <img src="img/logo.png" id="si">
+                <div>
+                <p id="tex">OncoGuide AI</p>
+                <p id="wh">Every Sunrise Brings Another Chance</p> </div>
+            </div>  
+            <div id="re">
+                <p id="on">Empowering patients through knowledge, compassion, and innovation.</p>
+            </div>
+        </div>
+        <div class="X">
+            <p class="con">Quick Links</p><br>
+            <a href="home.html" class="link">Home</a>
+            <a href="home.html" class="link">About</a>
+            <a href="home.html" class="link">Features</a>
+            <a href="home.html" class="link">How It Works</a>
+            <a href="home.html" class="link">Contact</a>
+        </div>
+        <div class="X">
+            <p class="con">Support</p><br>
+            <a href="#" class="link">FAQ</a>
+            <a href="#" class="link">Privacy Policy</a>
+            <a href="#" class="link">Terms Of Use</a>
+            <a href="#" class="link">Disclaimer</a>
+        </div>
+        <div class="X">
+            <p class="con">Contact</p><br>
+            <div class="contact">
+                 <i class="fa-solid fa-envelope"></i>
+                 <span>support@oncoguide.ai</span>
+            </div>
+            <div class="contact">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 12345 67890</span>
+            </div>
+            <div class="contact">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>India</span>
+            </div>
+        </div>
+        <div class="X">
+             <p class="con">Stay Connected</p>
+             <p class="en"> Your journey matters.<br>
+             We're here for you.</p>
+             <div class="icon">
+                <a href="#" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-linkedin-in"></i></a>
+             </div>
+        </div>
+    </div><hr>
+    <div id="end">
+        <p id="text">&copy; 2026 OncoGuide AI. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

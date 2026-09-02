@@ -1,0 +1,653 @@
+/* =====================================================
+   ONCOGUIDE AI - SPARKLING BLUE / PURPLE / PINK LOGIN
+   ===================================================== */
+
+
+/* =====================================================
+   1. RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   2. BODY
+   ===================================================== */
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    /*
+       Bright sparkling background
+       Blue → Purple → Pink
+    */
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(73, 124, 255, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(180, 74, 255, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 85%,
+            rgba(255, 77, 192, 0.28),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #dce7ff,
+            #e6d8ff,
+            #f8d8ef
+        );
+}
+
+
+/* =====================================================
+   3. MAIN LOGIN CONTAINER
+   ===================================================== */
+
+.login-container {
+    width: 1250px;
+
+    max-width: 100%;
+
+    height: 750px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    /*
+       Slightly blue base behind everything
+    */
+
+    background: #8798ed;
+
+    box-shadow:
+        0 25px 70px
+        rgba(67, 47, 180, 0.35),
+
+        0 0 45px
+        rgba(120, 80, 255, 0.15);
+}
+
+
+/* =====================================================
+   4. LEFT IMAGE SECTION
+   ===================================================== */
+
+.left-section {
+    width: 57%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+
+/*
+   Generated image fills the COMPLETE
+   left section.
+*/
+
+.left-section img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       Keeps branding on left side visible
+    */
+
+    object-position: left center;
+}
+
+
+/* =====================================================
+   5. RIGHT LOGIN SECTION
+   ===================================================== */
+
+.right-section {
+    width: 43%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 55px;
+
+    /*
+       SPARKLING BLUE
+       PURPLE
+       PINK
+       gradient
+    */
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(91, 133, 255, 0.45),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(255, 92, 211, 0.30),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #aebfff 0%,
+            #a99bea 42%,
+            #c888dc 75%,
+            #e58ac8 100%
+        );
+
+    /*
+       Soft inner glow
+    */
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =====================================================
+   6. LOGIN CARD
+   ===================================================== */
+
+.login-card {
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+/* =====================================================
+   7. LOGO
+   ===================================================== */
+
+.logo-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.logo-container img {
+    width: 85px;
+
+    height: 85px;
+
+    object-fit: contain;
+
+    display: block;
+
+    /*
+       Soft logo glow
+    */
+
+    filter:
+        drop-shadow(
+            0 6px 15px
+            rgba(87, 58, 190, 0.28)
+        );
+}
+
+
+/* =====================================================
+   8. WELCOME HEADING
+   ===================================================== */
+
+.login-card h1 {
+    text-align: center;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    /*
+       Bright blue text
+    */
+
+    color: #203a91;
+
+    text-shadow:
+        0 2px 10px
+        rgba(53, 73, 180, 0.12);
+}
+
+
+/* Gradient "Back" */
+
+.login-card h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #553ee8,
+            #963ee8,
+            #ed4fc1
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   9. SUBTITLE
+   ===================================================== */
+
+.subtitle {
+    text-align: center;
+
+    font-size: 16px;
+
+    color: #3d4d91;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   10. INPUT GROUP
+   ===================================================== */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+
+/* Label */
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #263a82;
+}
+
+
+/* =====================================================
+   11. INPUT BOX
+   ===================================================== */
+
+.input-box {
+    width: 100%;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 17px;
+
+    border-radius: 15px;
+
+    /*
+       Glass effect
+    */
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 8px 20px
+        rgba(68, 48, 150, 0.10);
+
+    transition: 0.3s ease;
+}
+
+
+/* =====================================================
+   12. INPUT ICONS
+   ===================================================== */
+
+.input-box i {
+    color: #526dd0;
+
+    font-size: 18px;
+}
+
+
+/* Left icon */
+
+.input-box i:first-child {
+    margin-right: 12px;
+}
+
+
+/* Eye icon */
+
+.input-box i:last-child {
+    margin-left: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   13. INPUT FIELD
+   ===================================================== */
+
+.input-box input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+
+    color: #293e7c;
+}
+
+
+/* Placeholder */
+
+.input-box input::placeholder {
+    color: #6e7dae;
+}
+
+
+/* =====================================================
+   14. INPUT FOCUS
+   ===================================================== */
+
+.input-box:focus-within {
+    border-color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.50);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(122, 93, 240, 0.18),
+
+        0 8px 25px
+        rgba(79, 64, 190, 0.18);
+}
+
+
+/* =====================================================
+   15. FORGOT PASSWORD
+   ===================================================== */
+
+.forgot-password {
+    text-align: right;
+
+    margin-top: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+.forgot-password a {
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #563fc0;
+
+    transition: 0.2s;
+}
+
+
+.forgot-password a:hover {
+    color: #e342b7;
+}
+
+
+/* =====================================================
+   16. LOGIN BUTTON
+   ===================================================== */
+
+.login-button {
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: white;
+
+    /*
+       BRIGHT SPARKLING BUTTON
+    */
+
+    background:
+        linear-gradient(
+            90deg,
+            #397cf0,
+            #604ce9,
+            #9b48df,
+            #e751bd
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(86, 65, 209, 0.38),
+
+        0 0 25px
+        rgba(154, 74, 228, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Arrow */
+
+.login-button i {
+    margin-left: 10px;
+}
+
+
+/* =====================================================
+   17. BUTTON HOVER
+   ===================================================== */
+
+.login-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(86, 65, 209, 0.42),
+
+        0 0 35px
+        rgba(205, 76, 220, 0.32);
+}
+
+
+/* =====================================================
+   18. BUTTON ACTIVE
+   ===================================================== */
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   19. SIGN UP TEXT
+   ===================================================== */
+
+.signup-text {
+    text-align: center;
+
+    margin-top: 28px;
+
+    font-size: 14px;
+
+    color: #465488;
+}
+
+
+.signup-text a {
+    text-decoration: none;
+
+    font-weight: bold;
+
+    color: #563fc1;
+
+    transition: 0.2s;
+}
+
+
+.signup-text a:hover {
+    color: #df4dbb;
+}
+
+
+/* =====================================================
+   20. TABLET RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 950px) {
+
+    .login-container {
+        width: 700px;
+
+        height: auto;
+
+        flex-direction: column;
+    }
+
+
+    .left-section {
+        width: 100%;
+
+        height: 350px;
+    }
+
+
+    .left-section img {
+        object-position: center;
+    }
+
+
+    .right-section {
+        width: 100%;
+
+        height: auto;
+
+        padding: 50px;
+    }
+
+}
+
+
+/* =====================================================
+   21. MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .login-container {
+        width: 100%;
+
+        border-radius: 20px;
+    }
+
+
+    .left-section {
+        height: 230px;
+    }
+
+
+    .right-section {
+        padding: 40px 25px;
+    }
+
+
+    .login-card h1 {
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+        font-size: 14px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .logo-container img {
+        width: 70px;
+
+        height: 70px;
+    }
+
+}
