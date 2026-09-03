@@ -1,186 +1,59 @@
-// ==========================================
-// SUPABASE CONFIGURATION
-// ==========================================
-
-const SUPABASE_URL =
-    "https://oqzryvcjdznjtcwtshp.supabase.co";
-
-const SUPABASE_KEY =
-    "sb_publishable_2bbQaqc-qNDLd-7SIYtrgQ_iO1AdYPy";
-
-
-// Create Supabase client
-const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-    );
-
-
-// ==========================================
-// GET FORM ELEMENTS
-// ==========================================
-
-const nameInput =
-    document.getElementById("name");
-
-const emailInput =
-    document.getElementById("email");
-
-const passwordInput =
-    document.getElementById("password");
-
-const confirmPasswordInput =
-    document.getElementById("confirm-password");
-
-const signupButton =
-    document.querySelector(".signup-button");
-
-
-// ==========================================
-// SIGN UP
-// ==========================================
-
-signupButton.addEventListener("click", async function () {
-
-    const name =
-        nameInput.value.trim();
-
-    const email =
-        emailInput.value.trim();
-
-    const password =
-        passwordInput.value;
-
-    const confirmPassword =
-        confirmPasswordInput.value;
-
-
-    // Check name
-    if (!name) {
-        alert("Please enter your full name.");
-        return;
-    }
-
-
-    // Check email
-    if (!email) {
-        alert("Please enter your email.");
-        return;
-    }
-
-
-    // Check password
-    if (!password) {
-        alert("Please enter a password.");
-        return;
-    }
-
-
-    // Check password length
-    if (password.length < 8) {
-        alert("Password must be at least 8 characters.");
-        return;
-    }
-
-
-    // Check confirm password
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-    }
-
-
-    // Disable button while processing
-    signupButton.disabled = true;
-
-    signupButton.innerHTML =
-        "Creating Account...";
-
-
-    try {
-
-        // ==========================================
-        // CREATE SUPABASE ACCOUNT
-        // ==========================================
-
-        const { data, error } =
-            await supabaseClient.auth.signUp({
-
-                email: email,
-
-                password: password,
-
-                options: {
-                    data: {
-                        full_name: name
-                    }
-                }
-
-            });
-
-
-        // ==========================================
-        // CHECK ERROR
-        // ==========================================
-
-        if (error) {
-
-            console.error(
-                "Signup error:",
-                error
-            );
-
-            alert(error.message);
-
-            return;
-        }
-
-
-        // ==========================================
-        // SUCCESS
-        // ==========================================
-
-        console.log(
-            "User created:",
-            data.user
-        );
-
-
-        alert(
-            "Account created successfully!"
-        );
-
-
-        // Go to login page
-
-        window.location.href =
-            "login.html";
-
-    }
-
-
-    catch (error) {
-
-        console.error(
-            "Unexpected error:",
-            error
-        );
-
-        alert(
-            "Something went wrong. Please try again."
-        );
-
-    }
-
-
-    finally {
-
-        signupButton.disabled = false;
-
-        signupButton.innerHTML =
-            'Sign Up <i class="fa-solid fa-arrow-right"></i>';
-
-    }
-
-});
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OncoGuide AI - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-section">
+            <img src="img/login.png" alt="OncoGuide AI">
+        </div>
+        <div class="right-section">
+            <div class="login-card">
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="OncoGuide AI Logo">
+                </div>
+                <h1>Welcome <span>Back</span></h1>
+                <p class="subtitle">
+                    Login to continue to OncoGuide AI
+                </p>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="password"> Password</label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                </div>
+                <div class="forgot-password">
+                    <a href="#"> Forgot Password?</a>
+                </div>
+                <button type="button" class="login-button">
+                    Login
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <p class="signup-text">
+                    Don't have an account?
+                    <a href="index.html">
+                        Sign up here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
