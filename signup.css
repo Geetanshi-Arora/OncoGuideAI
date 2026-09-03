@@ -1,0 +1,661 @@
+/* =====================================================
+   ONCOGUIDE AI - SIGN UP PAGE
+   LIGHT SPARKLING BLUE / PURPLE / PINK
+   ===================================================== */
+
+
+/* =====================================================
+   1. RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   2. BODY
+   ===================================================== */
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(70, 130, 255, 0.30),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(155, 75, 255, 0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 90%,
+            rgba(255, 85, 200, 0.25),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dbe7ff 0%,
+            #e7d9ff 50%,
+            #f8d9ee 100%
+        );
+}
+
+
+/* =====================================================
+   3. MAIN SIGNUP CONTAINER
+   ===================================================== */
+
+.signup-container {
+    width: 1250px;
+
+    max-width: 100%;
+
+    height: 750px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 70px
+        rgba(75, 60, 175, 0.28),
+
+        0 0 40px
+        rgba(120, 90, 230, 0.12);
+}
+
+
+/* =====================================================
+   4. LEFT IMAGE SECTION
+   ===================================================== */
+
+.left-section {
+    width: 42%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7da4f5,
+            #8b70e5,
+            #d76bc4
+        );
+}
+
+
+/* =====================================================
+   5. LEFT IMAGE
+   ===================================================== */
+
+/*
+   IMPORTANT:
+
+   "fill" makes the ENTIRE image visible
+   and fills the ENTIRE left div.
+
+   It does not crop the image.
+*/
+
+.left-section img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit:contain;
+}
+
+
+/* =====================================================
+   6. RIGHT SECTION
+   ===================================================== */
+
+.right-section {
+    width: 58%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 55px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 8%,
+            rgba(76, 130, 255, 0.32),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 100, 210, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(142, 96, 235, 0.16),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            145deg,
+            #cadbff 0%,
+            #d6cdf7 45%,
+            #eed0ea 100%
+        );
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(255, 255, 255, 0.24);
+}
+
+
+/* =====================================================
+   7. SIGNUP CARD
+   ===================================================== */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+/* =====================================================
+   8. LOGO CONTAINER
+   ===================================================== */
+
+.logo-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   9. ONCOGUIDE LOGO
+   ===================================================== */
+
+.logo-container img {
+    width: 70px;
+
+    height: 70px;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 6px 15px
+            rgba(85, 70, 190, 0.25)
+        );
+}
+
+
+/* =====================================================
+   10. HEADING
+   ===================================================== */
+
+.signup-card h1 {
+    text-align: center;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #27448f;
+
+    margin-bottom: 8px;
+}
+
+
+/* Gradient "Account" */
+
+.signup-card h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #5b50df,
+            #9f50d5,
+            #e05fbd
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   11. SUBTITLE
+   ===================================================== */
+
+.subtitle {
+    text-align: center;
+
+    color: #59658f;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 27px;
+}
+
+
+/* =====================================================
+   12. INPUT GROUP
+   ===================================================== */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   13. LABEL
+   ===================================================== */
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #2d4380;
+}
+
+
+/* =====================================================
+   14. INPUT BOX
+   ===================================================== */
+
+.input-box {
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.60);
+
+    border:
+        1px solid
+        rgba(90, 82, 170, 0.20);
+
+    box-shadow:
+        0 6px 18px
+        rgba(65, 55, 150, 0.08);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =====================================================
+   15. INPUT ICONS
+   ===================================================== */
+
+.input-box i {
+    color: #5d74cb;
+
+    font-size: 17px;
+}
+
+
+/* First icon */
+
+.input-box i:first-child {
+    margin-right: 11px;
+}
+
+
+/* Eye icon */
+
+.input-box i:last-child {
+    margin-left: 10px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+
+.input-box i:last-child:hover {
+    color: #b451d0;
+}
+
+
+/* =====================================================
+   16. INPUT
+   ===================================================== */
+
+.input-box input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+    color: #30457f;
+}
+
+
+/* Placeholder */
+
+.input-box input::placeholder {
+    color: #7d87ad;
+}
+
+
+/* =====================================================
+   17. INPUT FOCUS
+   ===================================================== */
+
+.input-box:focus-within {
+    border-color: #7667df;
+
+    background:
+        rgba(255, 255, 255, 0.80);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(115, 98, 220, 0.12),
+
+        0 8px 22px
+        rgba(76, 63, 170, 0.12);
+}
+
+
+/* =====================================================
+   18. SIGN UP BUTTON
+   ===================================================== */
+
+.signup-button {
+    width: 100%;
+
+    height: 56px;
+
+    margin-top: 9px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #498df2 0%,
+            #6669e5 35%,
+            #a157d3 70%,
+            #df68bf 100%
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(85, 73, 195, 0.30),
+
+        0 0 25px
+        rgba(180, 80, 220, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Arrow */
+
+.signup-button i {
+    margin-left: 10px;
+}
+
+
+/* =====================================================
+   19. BUTTON HOVER
+   ===================================================== */
+
+.signup-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 17px 34px
+        rgba(85, 73, 195, 0.38),
+
+        0 0 32px
+        rgba(210, 80, 220, 0.25);
+}
+
+
+/* =====================================================
+   20. BUTTON ACTIVE
+   ===================================================== */
+
+.signup-button:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   21. LOGIN TEXT
+   ===================================================== */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #59638d;
+}
+
+
+/* =====================================================
+   22. LOGIN LINK
+   ===================================================== */
+
+.login-text a {
+    text-decoration: none;
+
+    font-weight: bold;
+
+    color: #6652c8;
+
+    margin-left: 4px;
+
+    transition: color 0.2s ease;
+}
+
+
+.login-text a:hover {
+    color: #d957bd;
+}
+
+
+/* =====================================================
+   23. TABLET
+   ===================================================== */
+
+@media (max-width: 950px) {
+
+    .signup-container {
+        width: 700px;
+
+        height: auto;
+
+        flex-direction: column;
+    }
+
+
+    /* Left image */
+
+    .left-section {
+        width: 100%;
+
+        height: 400px;
+    }
+
+
+    .left-section img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: fill;
+    }
+
+
+    /* Right form */
+
+    .right-section {
+        width: 100%;
+
+        height: auto;
+
+        padding: 50px;
+    }
+
+}
+
+
+/* =====================================================
+   24. MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .signup-container {
+        width: 100%;
+
+        border-radius: 20px;
+    }
+
+
+    /* Image */
+
+    .left-section {
+        width: 100%;
+
+        height: 260px;
+    }
+
+
+    .left-section img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: fill;
+    }
+
+
+    /* Form */
+
+    .right-section {
+        width: 100%;
+
+        padding: 40px 25px;
+    }
+
+
+    /* Logo */
+
+    .logo-container img {
+        width: 65px;
+
+        height: 65px;
+    }
+
+
+    /* Heading */
+
+    .signup-card h1 {
+        font-size: 30px;
+    }
+
+
+    /* Subtitle */
+
+    .subtitle {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+}

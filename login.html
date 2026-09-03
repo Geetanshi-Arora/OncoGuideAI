@@ -1,0 +1,186 @@
+// ==========================================
+// SUPABASE CONFIGURATION
+// ==========================================
+
+const SUPABASE_URL =
+    "https://oqzryvcjdznjtcwtshp.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_2bbQaqc-qNDLd-7SIYtrgQ_iO1AdYPy";
+
+
+// Create Supabase client
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+// ==========================================
+// GET FORM ELEMENTS
+// ==========================================
+
+const nameInput =
+    document.getElementById("name");
+
+const emailInput =
+    document.getElementById("email");
+
+const passwordInput =
+    document.getElementById("password");
+
+const confirmPasswordInput =
+    document.getElementById("confirm-password");
+
+const signupButton =
+    document.querySelector(".signup-button");
+
+
+// ==========================================
+// SIGN UP
+// ==========================================
+
+signupButton.addEventListener("click", async function () {
+
+    const name =
+        nameInput.value.trim();
+
+    const email =
+        emailInput.value.trim();
+
+    const password =
+        passwordInput.value;
+
+    const confirmPassword =
+        confirmPasswordInput.value;
+
+
+    // Check name
+    if (!name) {
+        alert("Please enter your full name.");
+        return;
+    }
+
+
+    // Check email
+    if (!email) {
+        alert("Please enter your email.");
+        return;
+    }
+
+
+    // Check password
+    if (!password) {
+        alert("Please enter a password.");
+        return;
+    }
+
+
+    // Check password length
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters.");
+        return;
+    }
+
+
+    // Check confirm password
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+
+    // Disable button while processing
+    signupButton.disabled = true;
+
+    signupButton.innerHTML =
+        "Creating Account...";
+
+
+    try {
+
+        // ==========================================
+        // CREATE SUPABASE ACCOUNT
+        // ==========================================
+
+        const { data, error } =
+            await supabaseClient.auth.signUp({
+
+                email: email,
+
+                password: password,
+
+                options: {
+                    data: {
+                        full_name: name
+                    }
+                }
+
+            });
+
+
+        // ==========================================
+        // CHECK ERROR
+        // ==========================================
+
+        if (error) {
+
+            console.error(
+                "Signup error:",
+                error
+            );
+
+            alert(error.message);
+
+            return;
+        }
+
+
+        // ==========================================
+        // SUCCESS
+        // ==========================================
+
+        console.log(
+            "User created:",
+            data.user
+        );
+
+
+        alert(
+            "Account created successfully!"
+        );
+
+
+        // Go to login page
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Unexpected error:",
+            error
+        );
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    }
+
+
+    finally {
+
+        signupButton.disabled = false;
+
+        signupButton.innerHTML =
+            'Sign Up <i class="fa-solid fa-arrow-right"></i>';
+
+    }
+
+});

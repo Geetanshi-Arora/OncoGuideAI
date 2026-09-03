@@ -1,0 +1,185 @@
+*{
+    padding: 0px;
+    margin:0px;
+}
+.base-container{
+    background-color:rgb(219, 193, 243);
+    display:flex;
+    justify-content: space-between;
+    padding:2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+}
+#back{
+    text-decoration: none;
+    font-weight:bold;
+    color: blue;
+}
+.navbar{
+    display:flex;
+    background-color:white;
+}
+#A,#Q{
+    height:80px;
+    display:inline;
+}
+
+#text{
+    display: inline;
+}
+#head{
+    color:rgb(3, 3, 108);
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 32px;
+}
+h4{
+    color:rgb(110, 33, 182);
+}
+.P{
+    display:flex;
+    justify-content: center;
+    margin-left: auto;
+}
+.para{
+    display: flex;
+    flex-direction: column;
+    justify-content :center;
+}
+.content{
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    background-color: rgb(196, 222, 250);
+}
+.main{
+    background-color: rgb(241, 219, 252);
+    width:1200px;
+    display:flex;
+}
+h2{
+    color: blueviolet;
+}
+.text{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+}
+.steps{
+    display:flex;
+    flex-direction: column;
+    gap:2px;
+    padding:10px;
+    padding-left: 15px;
+}
+.step{
+    display :flex;
+    gap:10px;
+    margin:10px;
+}
+.a{
+    height:50px;
+    width:50px;
+}
+.b{
+    font-weight: bold;
+    font-size: 20px;
+}
+.box{
+    width:30px;
+    height:30px;
+    border-radius : 50%;
+    margin-left: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#check{
+    background-color: rgb(254, 145, 230);
+    display:flex;
+    gap:20px;
+    padding:10px;
+    align-items: center;
+    border-radius:10px;
+    margin:20px;
+}
+#pic{
+    height:80px;
+    width:80px;
+}
+.box i{
+    font-size:18px;
+}
+.loader{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    border:4px solid rgb(219,193,243);
+    border-top:4px solid rgb(105,220,158);
+    animation:spin 1s linear infinite;
+}
+@keyframes spin {
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.overview{
+    width:400px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+    border:1px solid blue;
+    border-radius:18px;
+}
+#ringContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#outerRing{
+    width:180px;
+    height: 180px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   background:conic-gradient(
+        indigo 0deg 216deg,
+        rgb(211,180,241) 216deg 360deg,
+   );
+    border:1px solid rgb(219,193,243);
+}
+#innerRing{
+    width:165px;
+    height: 165px;
+    border-radius: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(241, 219, 252) ;
+    border:1px solid rgb(219,193,243);
+}
+#c{
+    color: indigo;
+    position: relative;
+    top: -4px;
+}
+#e{
+    width:100%;
+    border:2px solid rgb(80, 78, 230);
+    margin:20px;
+}
+#f{
+    height:70px;
+    width:70px;
+}
