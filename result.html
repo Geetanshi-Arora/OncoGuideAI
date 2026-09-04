@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analysis </title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div id="logo">
+            <img src="img/logo.png" alt="onco guide logo" id="A">
+        </div>
+        <div id="text">
+            <h1 id="head">OncoGuide AI</h1>
+            <h4>~Every Sunrise Brings Another Chance</h4>
+        </div>
+        <div class="P">
+            <img src="img/secure.png" alt="security" id="Q">
+            <div class="para">
+                <p>Your Data is Safe and Secure</p>
+                <p id="line">We Prioritize Your Privacy </p>
+            </div>
+        </div>
+    </div>         
+</header>
+<div id="body">
+    <h1>AI Analysis Result</h1>
+    <p>Comprehensive analysis of your uploaded oncology reports</p>
+    <div class="box1">
+        <div class="patient">
+            <img class="p" src="img/contact.png">
+            <div>
+                <p class="heading">PATIENT SUMMARY</p>
+                <p id="patientSummary"></p>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/logo2.png">
+            <div>
+                <p class="heading">CANCER TYPE</p>
+                <p id="cancerType"></p>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/clinical.png">
+            <div>
+                <p class="heading">CLINICAL STAGE</p>
+                <p id="clinicalStage"></p>
+                <p>(Clinical)</p>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/TNM.png">
+            <div>
+                <p class="heading">TNM STAGE</p>
+                <p id="tnmStage"></p>
+            </div>
+        </div>
+    </div>
+    <div class="box1">
+        <div class="patient">
+            <img class="p" src="img/finding.png">
+            <div>
+                <p class="heading">IMPORTANT FINDINGS</p>
+                <ul id="importantFindings"></ul>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/biomarker.png">
+            <div>
+                <p class="heading">BIOMARKER</p>
+                <table class="biomarkerTable">
+                    <tr>
+                        <td>ER</td>
+                        <td id="er"></td>
+                    </tr>
+                    <tr>
+                        <td>PR</td>
+                        <td id="pr"></td>
+                    </tr>
+                    <tr>
+                        <td>HER2</td>
+                        <td id="her2"></td>
+                    </tr>
+                    <tr>
+                        <td>Ki-67</td>
+                        <td id="ki67"></td>
+                    </tr>
+                    <tr>
+                        <td>Histological Grade</td>
+                        <td id="grade"></td>
+                    </tr>
+                    <tr>
+                        <td>Others</td>
+                        <td id="others"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/treatment.png">
+            <div>
+                <p class="heading">TREATMENT PATHWAY</p>
+                <ol id="treatmentPathway"></ol>
+            </div>
+        </div>
+    </div>
+    <div class="box1">
+        <div class="patient">
+            <img class="p" src="img/drugs.png">
+            <div>
+                <p class="heading">RECOMMENDED DRUGS</p>
+                <table class="recommened">
+                    <thead>
+                    <tr>
+                        <th>Drug Name</th>
+                        <th>Class</th>
+                        <th>Purpose</th>
+                        <th>Reason</th>
+                        <th>Route</th>
+                        <th>Common Side Effects</th>
+                    </tr>
+                    </thead>
+                    <tbody id="recommendedDrugsBody"></tbody>  
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        Note: Drug selection and duration may vary based on patient tolerance and treating oncologist's decision.
+    </div>
+    <div class="box1">
+        <div class="patient">
+            <img class="p" src="img/duration.png">
+            <div>
+                <p class="heading">ESTIMATED TREATMENT DURATION</p>
+                <table class="duration">
+                    <tbody id="durationBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="patient" >
+            <img class="p" src="img/prognostic.png">
+            <div>
+                <p class="heading">PROGNOSTIC FACTORS</p>
+                <div class="factor-container">
+                    <div class="favorable">
+                        <h3>FAVORABLE</h3>
+                        <ul id="favorableFactors"></ul>
+                    </div>
+                        <h3>UNFAVORABLE</h3>
+                        <ul id="unfavorableFactors"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="note">
+        <p>NOTE: Durations are approximate and based on standard clinical practice. Actual duration may vary depending on patient condition, response to treatment and the treating oncologist's decision.</p>
+    </div>
+    <div class="box1">
+        <div class="patient">
+            <img class="p" src="img/finding.png">
+            <div>
+                <p class="heading">ADDITIONAL NOTES</p>
+                <p id="additionalNotes"></p>
+            </div>
+        </div>
+        <div class="patient">
+            <img class="p" src="img/level.png">
+            <div>
+                <p class="heading">CONFIDENCE LEVEL</p>
+                <div id="confidence">
+                    <p class="heading" id="confidenceLevel"></p>
+                    <p>The analysis is based on comprehensive reports and established clinical guidelines</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <i class="fas fa-info-circle"></i>
+        <span>Disclaimer:</span>
+        <p>OncoGuide AI provides clinical decision support for informational purposes only and does not replace professional medical advice</p>
+    </div>
+    
+</div>
+<script src="result.js"></script>
+</body>
+</html>
