@@ -7,8 +7,6 @@ const SUPABASE_URL =
 
 const SUPABASE_KEY =
     "sb_publishable_5ST9dwNzfV57ewEkRtMNyg_u0q81vIt";
-
-
 // Create Supabase client
 const supabaseClient =
     window.supabase.createClient(
