@@ -1,3 +1,8 @@
+const API_BASE_URL =
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 let biopsyUploaded = false;
 let ihcUploaded = false;
 let imagingUploaded = false;
@@ -263,7 +268,7 @@ analyzeBtn.addEventListener("click", async () => {
     try {
         analyzeBtn.disabled = true;
         analyzeBtn.innerText = "Analyzing...";
-        const response = await fetch("http://localhost:3000/api/upload", {
+        const response = await fetch(`${API_BASE_URL}/api/upload`, {
             method: "POST",
             body: formData
         });
@@ -272,9 +277,10 @@ analyzeBtn.addEventListener("click", async () => {
         console.log(data);
         if (data.success) {
             sessionStorage.setItem("analysisId", data.analysisId);
+            sessionStorage.setItem("analysis", JSON.stringify(data.analysis));
             window.location.href = "analysis.html";
         }else {
-            alert("Analysis failed. Please try again.");
+            alert(data.error || "Analysis failed. Please try again.");
             analyzeBtn.disabled = false;
             analyzeBtn.innerText = "Analyze";
         }
