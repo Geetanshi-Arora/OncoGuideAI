@@ -12,9 +12,7 @@ const app = express();
 
 const { GoogleGenAI } = require("@google/genai");
 
-const analysisStore = {};
-
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
@@ -52,7 +50,8 @@ if (
 // MULTER TEMPORARY STORAGE
 // =====================================
 
-const tempUploadDir = path.join(__dirname, "temp-uploads");
+// Vercel Functions can write temporary files only under /tmp.
+const tempUploadDir = path.join("/tmp", "onco-temp-uploads");
 
 if (!fs.existsSync(tempUploadDir)) {
     fs.mkdirSync(tempUploadDir, {
@@ -175,23 +174,6 @@ app.post("/api/upload", upload.any(), async (req, res) => {
 
         const analysisId = Date.now().toString();
 
-        analysisStore[analysisId] = {
-
-            status: "processing",
-
-            analysis: null
-
-        };
-
-        // Send response immediately
-        res.json({
-
-            success: true,
-
-            analysisId: analysisId
-
-        });
-
         // =====================================
         // READ PDF FILES
         // =====================================
@@ -310,16 +292,10 @@ app.post("/api/upload", upload.any(), async (req, res) => {
                     error
                 );
 
-                analysisStore[analysisId] = {
-
-                    status: "failed",
-
-                    error:
-                        `Could not process ${file.originalname}: ${error.message}`
-
-                };
-
-                return;
+                return res.status(500).json({
+                    success: false,
+                    error: `Could not process ${file.originalname}: ${error.message}`
+                });
 
             } finally {
 
@@ -353,9 +329,6 @@ app.post("/api/upload", upload.any(), async (req, res) => {
 
         }
 
-        analysisStore[analysisId].uploadedFiles =
-            uploadedReportPaths;
-
         // =====================================
         // CHECK EXTRACTED TEXT
         // =====================================
@@ -366,16 +339,10 @@ app.post("/api/upload", upload.any(), async (req, res) => {
                 "No text extracted from reports."
             );
 
-            analysisStore[analysisId] = {
-
-                status: "failed",
-
-                error:
-                    "No readable text could be extracted from the uploaded reports."
-
-            };
-
-            return;
+            return res.status(400).json({
+                success: false,
+                error: "No readable text could be extracted from the uploaded reports."
+            });
 
         }
 
@@ -542,17 +509,10 @@ ${allReportsText}
 
                 } else {
 
-                    analysisStore[analysisId] = {
-
-                        status: "failed",
-
-                        error:
-                            error.message ||
-                            "Gemini request failed."
-
-                    };
-
-                    return;
+                    return res.status(502).json({
+                        success: false,
+                        error: error.message || "Gemini request failed."
+                    });
 
                 }
 
@@ -566,16 +526,10 @@ ${allReportsText}
 
         if (!response) {
 
-            analysisStore[analysisId] = {
-
-                status: "failed",
-
-                error:
-                    "No response received from Gemini."
-
-            };
-
-            return;
+            return res.status(502).json({
+                success: false,
+                error: "No response received from Gemini."
+            });
 
         }
 
@@ -622,16 +576,10 @@ ${allReportsText}
                 analysisText
             );
 
-            analysisStore[analysisId] = {
-
-                status: "failed",
-
-                error:
-                    "Gemini returned invalid JSON."
-
-            };
-
-            return;
+            return res.status(502).json({
+                success: false,
+                error: "Gemini returned invalid JSON."
+            });
 
         }
 
@@ -651,68 +599,43 @@ ${allReportsText}
             )
         );
 
-        analysisStore[analysisId] = {
-
-            status: "completed",
-
-            analysis: analysis
-
-        };
-
         console.log(
             `Analysis ${analysisId} completed successfully.`
         );
 
+        return res.json({
+            success: true,
+            analysisId,
+            analysis
+        });
+
     } catch (error) {
 
-        console.error(
-            "UPLOAD / ANALYSIS ERROR:",
-            error
-        );
+        console.error("UPLOAD / ANALYSIS ERROR:", error);
 
-    }
-
-});
-
-// =====================================
-// ANALYSIS STATUS
-// =====================================
-
-app.get(
-    "/api/status/:analysisId",
-    (req, res) => {
-
-        const analysis =
-            analysisStore[
-                req.params.analysisId
-            ];
-
-        if (!analysis) {
-
-            return res.status(404).json({
-
+        if (!res.headersSent) {
+            return res.status(500).json({
                 success: false,
-
-                error:
-                    "Analysis not found"
-
+                error: error.message || "Analysis failed. Please try again."
             });
-
         }
 
-        res.json(analysis);
-
     }
-);
-
-// =====================================
-// START SERVER
-// =====================================
-
-app.listen(PORT, () => {
-
-    console.log(
-        `Server is running on port ${PORT}`
-    );
 
 });
+
+// =====================================
+// START LOCALLY / EXPORT FOR VERCEL
+// =====================================
+
+if (require.main === module) {
+    app.listen(PORT, () => {
+
+        console.log(
+            `Server is running on port ${PORT}`
+        );
+
+    });
+}
+
+module.exports = app;
