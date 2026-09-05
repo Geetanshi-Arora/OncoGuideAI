@@ -1,4 +1,4 @@
-const analysisId = sessionStorage.getItem("analysisId");
+const storedAnalysis = sessionStorage.getItem("analysis");
 let boxes = document.querySelectorAll(".box");
 let currentStep = 0;
 let animationFinished = false;
@@ -49,37 +49,25 @@ if(percent === 0){
         msg.innerText="AI analysis completed successfully. Your treatment report is ready."
     }
 }
-async function checkAnalysisStatus() {
-    try {
-        const response = await fetch(`http://localhost:3000/api/status/${analysisId}`);
-        const data = await response.json();
-        if (data.status === "completed") {
-            while (!animationFinished) {
-                await delay(500);
-            }
-            processingStep(4);
-            await delay(2000);
-            completeStep(4);
-            sessionStorage.setItem(
-                "analysis",
-                JSON.stringify(data.analysis)
-            );
-            console.log("Analysis Completed");
-
-            setTimeout(() => {
-                window.location.href = "result.html";
-            }, 1500);
-            return;
-        }
-        if (data.status === "failed") {
-            alert("AI Analysis Failed.");
-            return;
-        }
-        setTimeout(checkAnalysisStatus, 2000);
-    } catch (err) {
-        console.error(err);
-        setTimeout(checkAnalysisStatus, 2000);
+async function showCompletedAnalysis() {
+    if (!storedAnalysis) {
+        alert("No completed analysis was found. Please upload the reports again.");
+        window.location.href = "upload.html";
+        return;
     }
+
+    while (!animationFinished) {
+        await delay(500);
+    }
+
+    processingStep(4);
+    await delay(2000);
+    completeStep(4);
+    console.log("Analysis Completed");
+
+    setTimeout(() => {
+        window.location.href = "result.html";
+    }, 1500);
 }
 startAnalysis();
-checkAnalysisStatus();
+showCompletedAnalysis();
